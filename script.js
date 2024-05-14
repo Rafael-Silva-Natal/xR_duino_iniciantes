@@ -23,6 +23,7 @@ function criarBotao() {
   novoBotao.addEventListener("click", function() {
       gerarNovoAudio();
   }); 
+  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio() {
@@ -58,6 +59,7 @@ function criarBotao2() {
   novoBotao2.addEventListener("click", function() {
       gerarNovoAudio2();
   }); 
+  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio2() {
@@ -93,6 +95,7 @@ function criarBotao3() {
   novoBotao3.addEventListener("click", function() {
       gerarNovoAudio3();
   }); 
+  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio3() {
@@ -127,6 +130,7 @@ function criarBotao4() {
   novoBotao4.addEventListener("click", function() {
       gerarNovoAudio4();
   }); 
+  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio4() {
@@ -161,6 +165,7 @@ function criarBotao5() {
   novoBotao5.addEventListener("click", function() {
       gerarNovoAudio5();
   }); 
+  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio5() {
@@ -196,6 +201,7 @@ function criarBotao6() {
   novoBotao6.addEventListener("click", function() {
       gerarNovoAudio6();
   }); 
+  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio6() {
@@ -230,6 +236,7 @@ function criarBotao7() {
   novoBotao7.addEventListener("click", function() {
       gerarNovoAudio7();
   }); 
+ 
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio7() {
@@ -264,6 +271,7 @@ function criarBotao8() {
   novoBotao8.addEventListener("click", function() {
       gerarNovoAudio8();
   }); 
+
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio8() {

@@ -108,6 +108,7 @@
     font-size: 14px;
     text-align: justify; /* Justifica o texto */
     width: 100px; /* Define a largura do tooltip */
+    z-index: 9999; /* Garante que o tooltip esteja acima de outros elementos */
 }
 #regras:hover::after,
 .botaoSom:hover::after,
@@ -192,7 +193,6 @@
   color: white;
   cursor: pointer;
   font-size: 16px;
-  margin-right: 20px;
   /*margin-right: 20px;*/
 }
 .menu-button5 {
@@ -223,7 +223,7 @@
   background-color: #951afa;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  margin-top:20px;
+  margin-top: 40px;
 }
 #Aba6 {
  display: none;
@@ -231,7 +231,7 @@
   background-color: #951afa;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 40px;
   left: 100px;
 }
 #Aba7 {
@@ -241,7 +241,7 @@
   background-color: #951afa;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  margin-top:20px;
+  margin-top:40px;
   left: 170px;
 }
 #Aba8 {
@@ -251,7 +251,7 @@
   background-color: #951afa;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   padding: 10px;
-  margin-top:20px;
+  margin-top:40px;
   left: 260px;
 }
 
@@ -308,10 +308,84 @@
 
 
 
+
+body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Impede a barra de rolagem do corpo */
+            color: #fff; /* Cor do texto */
+            font-family: Arial, sans-serif; /* Fonte do texto */
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Redimensiona o vídeo para cobrir todo o elemento */
+            z-index: -1; /* Coloca o vídeo atrás de todos os outros elementos */
+        }
+
+        /* Estilos para a barra de menu */
+        #menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* background-color: rgba(0, 0, 0, 0.5);  Cor de fundo com transparência */
+            z-index: 1; /* Coloca a barra de menu sobre o vídeo */
+            /* Adicione outros estilos conforme necessário */
+        }
+
 </style>
   <body class="body">
+    <video id="background-video" autoplay loop muted>
+      <source src="Imagens/Meu Filme.mp4" type="video/mp4">
+      Seu navegador não suporta vídeos HTML5.
+  </video>
 
-  
+  <!--
+    HTML
+    .body{
+  background-color: #d6e0df;
+  background-image:  url('public/Imagens/fundoProgram.png');
+  background-size:100%;
+  background-position: center;
+  background-repeat:no-repeat;
+}
+CSS
+
+video{
+  width: 1180px; /* Ajuste conforme necessário */
+    height: 1400px; /* Ajuste conforme necessário */
+    /*width: 1080px;  height: 1083px;  */
+ 
+ 
+}
+		#video-container {
+			display: flex;
+			flex-direction: column;
+		
+     
+    }
+    .centered-image {
+    background-image: url('Imagens/Meu Filme.mp4'); /* GIF principal (personagem parado) */
+    background-size: contain;
+    /*background-position: center;*/
+    width: 300px; /* Ajuste conforme necessário */
+    height: 300px; /* Ajuste conforme necessário */
+    position:fixed;
+    /*top: 300px; Ajuste conforme necessário */
+    /*left: 600px; Ajuste conforme necessário */
+    transform: translate(-50%, -50%);
+    margin-left: 340px;
+    margin-top: -180px;
+    border:0px;
+    /*align-items: center;*/
+    /*animation: infinite; Loop do GIF principal */
+    }
+
+  -->
 
     <div id="barraMenu">
       <div id="menu">
@@ -357,8 +431,17 @@
       </div>
 
    <div>
+    <!--
+    <div class="centered-image" id="character">
+      <div id="video-container">
+         <video id="video1" autoplay loop muted>
+           <source src="Imagens/Meu Filme.mp4" type="video/mp4">
+         </video>
+      </div>
+           </div>-->
 
-   
+
+
 
       <!--<p id="cabeçalho2">xR_duíno IDE versão 1.0</p>-->
       </div>
@@ -479,41 +562,44 @@
       <button id="botao9" data-tooltip="Botão referente a nota dó">523,25 Hz</button><br>
     </div>
     <div id="minhaDiv">
-      
-       <!--<div class="centered-image" id="character">
- <div id="video-container">
-		<video id="video1" autoplay loop muted>
-			<source src="Imagens/Meu Filme.mp4" type="video/mp4">
-		</video>
- </div>
-      </div>-->
-          
+    
           </div><!--div responsavel pelos botoes em inline-block-->
 
     <div id="minhaDivTexto">
       
 </div>
   
+
+
   <!--div responsavel pelo texto em inline-block com a div dos botoes-->
     <div id="botoesAuxiliares">
         <button id="botaoApagar1" data-tooltip="Botão que apaga notas criadas">Apagar blocos</button><br><br>
         <button id="botaoParar" data-tooltip="Botão que para o som gerado">BREAK SOUND !</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
         <button id="gravador" data-tooltip="Antes de baixar leia as regras do download!">Baixar</button>
     </div><!--div responsavel pelos botoes auxiliares-->
-
   </div>
+
+
+
+  
   
  
 		
 	</div>
   
-      
+      <!--<div class="centered-image" id="character">
+ <div id="video-container">
+		<video id="video1" autoplay loop muted>
+			<source src="Imagens/Meu Filme.mp4" type="video/mp4">
+		</video>
+ </div>
+      </div>-->
       <script src="script.js"></script>
       <script>
         //criar botão para sair do modo iniciante...
             function redirecionar2() {
       // Altere o URL abaixo para a página desejada
-      window.location.href = " https://rafael-silva-natal.github.io/xR_duino_Version_1.0/";
+      window.location.href = "index.html";
   }
   // Obtém o elemento do botão por seu ID
   var botao10 = document.getElementById("botao10");
