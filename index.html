@@ -70,6 +70,7 @@
   cursor: pointer;
   margin: 10px;
 }
+#teclado::after,
 #regras::after,
 .botaoSom::after,
 .botaoSom2::after,
@@ -110,6 +111,7 @@
     width: 100px; /* Define a largura do tooltip */
     z-index: 9999; /* Garante que o tooltip esteja acima de outros elementos */
 }
+#teclado:hover::after,
 #regras:hover::after,
 .botaoSom:hover::after,
 .botaoSom2:hover::after,
@@ -338,6 +340,70 @@ body {
         }
 
 </style>
+<style>
+  #teclado{
+    position: fixed;
+    z-index: 1;
+width: 275px;
+height: 160;
+
+  /* Arredonda os cantos */
+border-radius: 15px; /* Ajuste o valor conforme necessário para mais ou menos arredondamento */
+  /* Adiciona uma borda */
+border: 5px solid #390b5f; /* Substitua #000 pela cor desejada para a borda */
+  /* Define outras propriedades de layout, se necessário */
+background-color: #b179df;
+
+
+}
+   
+ #audioButton1,
+ #audioButton2,
+ #audioButton3,
+ #audioButton4,
+ #audioButton5,
+ #audioButton6,
+ #audioButton7,
+ #audioButton8{
+
+  width: 30px;
+  height: 50px;
+  border-radius: 10px;
+  color: white;
+ margin-top: 3px;
+  margin-bottom: 3xp;
+ text-shadow: 1px 1px ;
+ 
+
+ }
+ #audioButton1{
+  background-color: brown;
+  margin-left: 3px;
+ border-color: rgb(90, 32, 32);
+  padding: 1px;
+ }
+ #audioButton2{
+  background-color: green;
+ }
+ #audioButton3{
+  background-color: orange;
+ }
+ #audioButton4{
+  background-color: blue;
+ }
+ #audioButton5{
+  background-color: yellow;
+ }
+ #audioButton6{
+  background-color: violet;
+ }
+ #audioButton7{
+  background-color: red;
+ }
+ #audioButton8{
+  background-color: rgb(94, 60, 60);
+ }
+</style>
   <body class="body">
     <video id="background-video" autoplay loop muted>
       <source src="Imagens/Meu Filme.mp4" type="video/mp4">
@@ -521,8 +587,19 @@ body {
   <!--div responsavel pelo texto em inline-block com a div dos botoes-->
     <div id="botoesAuxiliares">
         <button id="botaoApagar1" data-tooltip="Botão que apaga notas criadas">Apagar blocos</button><br><br>
-        <button id="botaoParar" data-tooltip="Botão que para o som gerado">BREAK SOUND !</button><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <button id="gravador" data-tooltip="Antes de baixar leia as regras do download!">Baixar</button>
+        <button id="botaoParar" data-tooltip="Botão que para o som gerado">BREAK SOUND !</button><br><br><br><br><br><br><br><br><br><br><br>
+        <button id="gravador" data-tooltip="Antes de baixar leia as regras do download!">Baixar</button><br><br><br>
+        <div id="teclado" data-tooltip="Teclado musical">
+          <button id="audioButton1">a Dó</button>
+          <button id="audioButton2">s Ré</button>
+          <button id="audioButton3">d Mi</button>
+          <button id="audioButton4">f Fá</button>
+          <button id="audioButton5">g Sol</button>
+          <button id="audioButton6">h Lá</button>
+          <button id="audioButton7">j Sí</button>
+          <button id="audioButton8">k dó</button>
+        </div>
+
     </div><!--div responsavel pelos botoes auxiliares-->
   </div>
 
@@ -584,6 +661,70 @@ body {
           }
         }
 
+      </script>
+      <script>
+        const audio1 = new Audio('public/Audio Piano/Piano_10_Segundos/1_Dó_261p63Hz.mp3'); // Substitua pelo caminho do seu primeiro arquivo de áudio
+        const audio2 = new Audio('public/Audio Piano/Piano_10_Segundos/2_Ré_293p66Hz.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+        const audio3 = new Audio('public/Audio Piano/Piano_10_Segundos/3_Mi_329p63Hz.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+        const audio4 = new Audio('public/Audio Piano/Piano_10_Segundos/4_Fá_349p23Hz.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+        const audio5 = new Audio('public/Audio Piano/Piano_10_Segundos/5_Sol_392Hz.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+        const audio6 = new Audio('public/Audio Piano/Piano_10_Segundos/6_Lá_440Hz.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+        const audio7 = new Audio('public/Audio Piano/Piano_10_Segundos/7_Sí_493p88Hz.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+        const audio8 = new Audio('public/Audio Piano/Piano_10_Segundos/8_dó_523p25.mp3'); // Substitua pelo caminho do seu segundo arquivo de áudio
+         
+        const buttons = [
+          { button: document.getElementById('audioButton1'), audio: audio1, isPlaying: false, key: 'a' },
+          { button: document.getElementById('audioButton2'), audio: audio2, isPlaying: false, key: 's' },
+          { button: document.getElementById('audioButton3'), audio: audio3, isPlaying: false, key: 'd' },
+          { button: document.getElementById('audioButton4'), audio: audio4, isPlaying: false, key: 'f' },
+          { button: document.getElementById('audioButton5'), audio: audio5, isPlaying: false, key: 'g' },
+          { button: document.getElementById('audioButton6'), audio: audio6, isPlaying: false, key: 'h' },
+          { button: document.getElementById('audioButton7'), audio: audio7, isPlaying: false, key: 'j' },
+          { button: document.getElementById('audioButton8'), audio: audio8, isPlaying: false, key: 'k' }
+    
+        ];
+    
+        buttons.forEach(button => {
+          button.button.addEventListener('mousedown', () => playAudio(button));
+          button.button.addEventListener('mouseup', () => stopAudio(button));
+          button.button.addEventListener('mouseleave', () => {
+            if (button.isPlaying) stopAudio(button);
+          });
+        });
+    
+        document.addEventListener('keydown', function(event) {
+          buttons.forEach(button => {
+            if (event.key.toLowerCase() === button.key && !button.isPlaying) {
+              playAudio(button);
+            }
+          });
+        });
+    
+        document.addEventListener('keyup', function(event) {
+          buttons.forEach(button => {
+            if (event.key.toLowerCase() === button.key && button.isPlaying) {
+              stopAudio(button);
+            }
+          });
+        });
+    
+        function playAudio(button) {
+          if (!button.isPlaying) {
+            buttons.forEach(otherButton => {
+              if (otherButton.isPlaying) stopAudio(otherButton);
+            });
+            button.isPlaying = true;
+            button.audio.currentTime = 0;
+            button.audio.play();
+          }
+        }
+    
+        function stopAudio(button) {
+          if (button.isPlaying) {
+            button.isPlaying = false;
+            button.audio.pause();
+          }
+        }
       </script>
       
 </body>
