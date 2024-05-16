@@ -235,7 +235,7 @@
             font-size: 10px; /* Tamanho da fonte do botão */  
             margin-top: 60px;
             margin-left: 1050px;
-            margin-bottom: 65px;
+            margin-bottom: 70px;
             color: black;
             text-shadow: 1px 1px rgb(111, 8, 247);
             font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -280,29 +280,19 @@
 
 
     #meusBotoes {
-      border: 5px;
+    
         display: inline-block;/*define formato e cores para a box e conteudo dos botões*/
         vertical-align: top;
         margin-right: 330px;/*define a distancia entre as divs*/
         overflow-y: auto;/* sobre a barra de rolagem */
-        height: 500px; /* ou qualquer outra altura desejada */
+        height: 400px; /* ou qualquer outra altura desejada */
         margin-left: 20px;
-         /* Adiciona uma imagem de fundo */
-    background-image: url('Imagens/pianinho.png') ;
-    /* Define como a imagem de fundo deve ser exibida */
-    background-size: cover; /* Ajusta o tamanho da imagem para cobrir a div */
-    background-position: center; /* Centraliza a imagem na div */
-    /* Define outras propriedades de layout, se necessário */
-
-
-    
-   /* Arredonda os cantos */
-  border-radius: 15px; /* Ajuste o valor conforme necessário para mais ou menos arredondamento */
-  
-  /* Adiciona uma borda */
-  border: 5px solid #951afa; /* Substitua #000 pela cor desejada para a borda */
-  
-  /* Define outras propriedades de layout, se necessário */
+        background-image: url('Imagens/pianinho.png') ; /* Define como a imagem de fundo deve ser exibida */
+        background-size: cover; /* Ajusta o tamanho da imagem para cobrir a div */
+        background-position: center; /* Centraliza a imagem na div */
+        border-radius: 15px; /* Ajuste o valor conforme necessário para mais ou menos arredondamento */
+        border: 10px solid #951afa; /* Substitua #000 pela cor desejada para a borda */
+        border-right: 0px;
       }
       #minhaDiv {
         margin-top: 180px;
@@ -352,29 +342,31 @@
         background-color: #8e0fe8;/*define estilização de box dos botoes de forma independente*/
         color: black;
         border: 5px solid rgb(252, 4, 4);
-        padding: 5px;
+        padding: 3px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 100px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.0em;
+        font-size: 0.8em;
         text-align:center;
         border-radius: 10%;
      }
       #mensagem,
       #botao1
       {
+       
         background-color: #8e0fe8;/*define estilização de box dos botoes de forma independente*/
         color: black;
         border: 5px solid rgb(53, 4, 252);
-        padding: 5px;
+        padding: 3px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 110px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.0em;
+        font-size: 0.8em;
         text-align:center;
         border-radius: 10%;
+        
       
       }
 
@@ -382,10 +374,10 @@
         background-color:rgb(128, 53, 24);/*define estilização de box dos botoes de forma independente*/
         color: white;
         border: 3px solid rgb(75, 22, 1);
-        padding: 5px;
+        padding: 2px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -398,8 +390,8 @@
         border: 3px solid rgb(16, 116, 3);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -412,8 +404,8 @@
         border: 3px solid rgb(145, 72, 3);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -426,8 +418,8 @@
         border: 3px solid rgb(4, 15, 167);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -440,8 +432,8 @@
         border: 3px solid rgb(117, 126, 2);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -454,8 +446,8 @@
         border: 3px solid rgb(88, 3, 114);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -469,8 +461,8 @@
         border: 3px solid rgb(145, 19, 67);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -483,8 +475,8 @@
         border: 3px solid rgb(110, 59, 37);
         padding: 5px;
         margin: 5px;
-        width: 120px;
-        height: 40px;
+        width: 90px;
+        height: 30px;
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         font-size: 1.0em;
         text-align:center;
@@ -496,53 +488,53 @@
         color: rgb(128, 53, 24);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
 
       .titulos2{
         color: rgb(73, 247, 51);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
 
       .titulos3{
         color: rgb(250, 141, 39);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
       .titulos4{
         color: rgb(81, 92, 245);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
       .titulos5{
         color: rgb(234, 250, 7);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
 
       .titulos6{
         color: rgb(191, 14, 245);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
 
       .titulos7{
         color: rgb(248, 7, 99);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
       .titulos8{
         color: rgb(163, 110, 88);
         text-shadow: 1px 1px rgb(78, 63, 143);
         font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.3em;
       }
       
       .titu{
