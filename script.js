@@ -8,10 +8,23 @@ let audioEmExecucao = false;
 let audiosEmExecucao = [];
 // Array para armazenar referências aos áudios gerados para download
 let audiosParaDownload = [];
+// Array para armazenar referências aos textos de posição dos botões
+let textosPosicao = [];
+// Array para armazenar referências às quebras de linha
+let quebrasDeLinha = [];
 
 //#######################################Dó
 // Função para criar um novo botão e gerar um novo áudio
 function criarBotao() {
+
+ // Cria um novo elemento de texto para indicar a posição do botão
+ const textoPosicao = document.createElement("span");
+ textoPosicao.textContent = ` Bloco ${botoesCriados.length+1}`;
+ textoPosicao.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+ document.getElementById("minhaDiv").appendChild(textoPosicao); // Adiciona o texto à página
+ textosPosicao.push(textoPosicao); // Adiciona o texto ao array
+ 
+ 
   const novoBotao = document.createElement("button");
   novoBotao.textContent = "Dó";
   novoBotao.dataset.tooltip = "Botão para ouvir e selecionar a nota Dó para download"; // Adiciona o texto do tooltip
@@ -23,8 +36,14 @@ function criarBotao() {
   novoBotao.addEventListener("click", function() {
       gerarNovoAudio();
   }); 
+
+
+  const quebraDeLinha = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha); // Adiciona a quebra de linha ao array
   
 }
+
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio() {
   if (!audioEmExecucao) { // Verifica se não há áudio em execução
@@ -48,6 +67,16 @@ document.getElementById("botao2").addEventListener("click", criarBotao);
 //###############################################Ré
 // Função para criar um novo botão e gerar um novo áudio
 function criarBotao2() {
+
+   // Cria um novo elemento de texto para indicar a posição do botão
+  const textoPosicao2 = document.createElement("span");
+  textoPosicao2.textContent = ` Bloco ${botoesCriados.length+1}`;
+  textoPosicao2.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+  document.getElementById("minhaDiv").appendChild(textoPosicao2); // Adiciona o texto à página
+  textosPosicao.push(textoPosicao2); // Adiciona o texto ao array
+
+
+
   const novoBotao2 = document.createElement("button");
   novoBotao2.textContent = "Ré";
   novoBotao2.dataset.tooltip = "Botão para ouvir e selecionar a nota Ré para download"; // Adiciona o texto do tooltip
@@ -59,6 +88,10 @@ function criarBotao2() {
   novoBotao2.addEventListener("click", function() {
       gerarNovoAudio2();
   }); 
+
+  const quebraDeLinha2 = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha2); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha2); // Adiciona a quebra de linha ao array
   
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
@@ -84,6 +117,16 @@ document.getElementById("botao3").addEventListener("click", criarBotao2);
 //###############################################Mi
 // Função para criar um novo botão e gerar um novo áudio
 function criarBotao3() {
+
+  // Cria um novo elemento de texto para indicar a posição do botão
+ const textoPosicao3 = document.createElement("span");
+ textoPosicao3.textContent = ` Bloco ${botoesCriados.length+1}`;
+ textoPosicao3.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+ document.getElementById("minhaDiv").appendChild(textoPosicao3); // Adiciona o texto à página
+ textosPosicao.push(textoPosicao3); // Adiciona o texto ao array
+
+
+
   const novoBotao3 = document.createElement("button");
   novoBotao3.textContent = "Mi";
   novoBotao3.dataset.tooltip = "Botão para ouvir e selecionar a nota Mi para download"; // Adiciona o texto do tooltip
@@ -95,6 +138,10 @@ function criarBotao3() {
   novoBotao3.addEventListener("click", function() {
       gerarNovoAudio3();
   }); 
+
+  const quebraDeLinha3 = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha3); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha3); // Adiciona a quebra de linha ao array
   
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
@@ -119,6 +166,16 @@ document.getElementById("botao4").addEventListener("click", criarBotao3);
 
 //###############################################Fá
 function criarBotao4() {
+
+   // Cria um novo elemento de texto para indicar a posição do botão
+ const textoPosicao4 = document.createElement("span");
+ textoPosicao4.textContent = ` Bloco ${botoesCriados.length+1}`;
+ textoPosicao4.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+ document.getElementById("minhaDiv").appendChild(textoPosicao4); // Adiciona o texto à página
+ textosPosicao.push(textoPosicao4); // Adiciona o texto ao array
+
+
+
   const novoBotao4 = document.createElement("button");
   novoBotao4.textContent = "Fá";
   novoBotao4.dataset.tooltip = "Botão para ouvir e selecionar a nota Fá para download"; // Adiciona o texto do tooltip
@@ -130,6 +187,10 @@ function criarBotao4() {
   novoBotao4.addEventListener("click", function() {
       gerarNovoAudio4();
   }); 
+
+  const quebraDeLinha4 = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha4); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha4); // Adiciona a quebra de linha ao array
   
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
@@ -154,6 +215,14 @@ document.getElementById("botao5").addEventListener("click", criarBotao4);
 
 //###############################################Sol
 function criarBotao5() {
+
+  const textoPosicao5 = document.createElement("span");
+  textoPosicao5.textContent = ` Bloco ${botoesCriados.length+1}`;
+  textoPosicao5.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+  document.getElementById("minhaDiv").appendChild(textoPosicao5); // Adiciona o texto à página
+  textosPosicao.push(textoPosicao5); // Adiciona o texto ao array
+  
+
   const novoBotao5 = document.createElement("button");
   novoBotao5.textContent = "Sol";
   novoBotao5.dataset.tooltip = "Botão para ouvir e selecionar a nota Sol para download"; // Adiciona o texto do tooltip
@@ -165,6 +234,10 @@ function criarBotao5() {
   novoBotao5.addEventListener("click", function() {
       gerarNovoAudio5();
   }); 
+
+  const quebraDeLinha5 = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha5); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha5); // Adiciona a quebra de linha ao array
   
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
@@ -190,6 +263,16 @@ document.getElementById("botao6").addEventListener("click", criarBotao5);
 
 //###############################################Lá
 function criarBotao6() {
+
+
+   // Cria um novo elemento de texto para indicar a posição do botão
+ const textoPosicao6 = document.createElement("span");
+ textoPosicao6.textContent = ` Bloco ${botoesCriados.length+1}`;
+ textoPosicao6.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+ document.getElementById("minhaDiv").appendChild(textoPosicao6); // Adiciona o texto à página
+ textosPosicao.push(textoPosicao6); // Adiciona o texto ao array
+
+
   const novoBotao6 = document.createElement("button");
   novoBotao6.textContent = "Lá";
   novoBotao6.dataset.tooltip = "Botão para ouvir e selecionar a nota Lá para download"; // Adiciona o texto do tooltip
@@ -202,6 +285,10 @@ function criarBotao6() {
       gerarNovoAudio6();
   }); 
   
+  const quebraDeLinha6 = document.createElement("br");
+  document.getElementById("minhaDiv").appendChild(quebraDeLinha6); // Adiciona a quebra de linha à página
+  quebrasDeLinha.push(quebraDeLinha6); // Adiciona a quebra de linha ao array
+
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
 function gerarNovoAudio6() {
@@ -225,6 +312,14 @@ document.getElementById("botao7").addEventListener("click", criarBotao6);
 
 //###############################################Si
 function criarBotao7() {
+
+  const textoPosicao7 = document.createElement("span");
+  textoPosicao7.textContent = ` Bloco ${botoesCriados.length+1}`;
+  textoPosicao7.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+  document.getElementById("minhaDiv").appendChild(textoPosicao7); // Adiciona o texto à página
+  textosPosicao.push(textoPosicao7); // Adiciona o texto ao array
+
+
   const novoBotao7 = document.createElement("button");
   novoBotao7.textContent = "Sí";
   novoBotao7.dataset.tooltip = "Botão para ouvir e selecionar a nota Sí para download"; // Adiciona o texto do tooltip
@@ -236,6 +331,10 @@ function criarBotao7() {
   novoBotao7.addEventListener("click", function() {
       gerarNovoAudio7();
   }); 
+
+  const quebraDeLinha7 = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha7); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha7); // Adiciona a quebra de linha ao array
  
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
@@ -260,6 +359,14 @@ document.getElementById("botao8").addEventListener("click", criarBotao7);
 
 //###############################################dó
 function criarBotao8() {
+
+// Cria um novo elemento de texto para indicar a posição do botão
+const textoPosicao8 = document.createElement("span");
+textoPosicao8.textContent = ` Bloco ${botoesCriados.length+1}`;
+textoPosicao8.classList.add("posicaoTexto"); // Adiciona a classe CSS para estilizar o texto
+document.getElementById("minhaDiv").appendChild(textoPosicao8); // Adiciona o texto à página
+textosPosicao.push(textoPosicao8); // Adiciona o texto ao array
+
   const novoBotao8 = document.createElement("button");
   novoBotao8.textContent = "dó";
   novoBotao8.dataset.tooltip = "Botão para ouvir e selecionar a nota dó para download"; // Adiciona o texto do tooltip
@@ -271,6 +378,10 @@ function criarBotao8() {
   novoBotao8.addEventListener("click", function() {
       gerarNovoAudio8();
   }); 
+
+  const quebraDeLinha8 = document.createElement("br");
+ document.getElementById("minhaDiv").appendChild(quebraDeLinha8); // Adiciona a quebra de linha à página
+ quebrasDeLinha.push(quebraDeLinha8); // Adiciona a quebra de linha ao array
 
 }
 // Função para gerar um novo elemento de áudio e armazená-lo no array de downloads
@@ -294,16 +405,33 @@ function gerarNovoAudio8() {
 document.getElementById("botao9").addEventListener("click", criarBotao8);
 
 //#############################Função para apagar o último botão criado########################
+// Função para apagar o último botão, texto correspondente e quebra de linha
 function apagarUltimoBotao() {
-    if (botoesCriados.length > 0) {
-        const ultimoBotao = botoesCriados.pop(); // Remove o último botão do array
-        ultimoBotao.parentNode.removeChild(ultimoBotao); // Remove o botão do DOM
+  if (botoesCriados.length > 0) {
+    const ultimoBotao = botoesCriados.pop(); // Remove o último botão do array
+    ultimoBotao.parentNode.removeChild(ultimoBotao); // Remove o botão do DOM
+
+    if (textosPosicao.length > 0) {
+      const ultimoTexto = textosPosicao.pop(); // Remove o último texto do array
+      ultimoTexto.parentNode.removeChild(ultimoTexto); // Remove o texto do DOM
     }
+
+    if (quebrasDeLinha.length > 0) {
+      const ultimaQuebra = quebrasDeLinha.pop(); // Remove a última quebra de linha do array
+      ultimaQuebra.parentNode.removeChild(ultimaQuebra); // Remove a quebra de linha do DOM
+    }
+  }
+
+  // Se todos os botões, textos e quebras de linha foram apagados, reseta os arrays
+  if (botoesCriados.length === 0 && textosPosicao.length === 0 && quebrasDeLinha.length === 0) {
+    botoesCriados = [];
+    textosPosicao = [];
+    quebrasDeLinha = [];
+  }
 }
+
 /*// Adiciona um evento de clique ao botão "apagarBotao"
 document.getElementById("botaoApagar1").addEventListener("click", apagarUltimoBotao);*/
-
-
 //função dupla em teste.... teoricamente apaga botões e para audios
 document.getElementById("botaoApagar1").addEventListener("click", function() {
   apagarUltimoBotao();
